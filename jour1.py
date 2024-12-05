@@ -1,5 +1,3 @@
-import os
-
 def lire_lignes(fichier):
     with open(fichier, 'r') as f:
         lignes = f.readlines()

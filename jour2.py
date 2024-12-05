@@ -1,5 +1,3 @@
-import os
-
 def lire_lignes(fichier):
     with open(fichier, 'r') as f:
         lignes = f.readlines()
@@ -18,7 +16,7 @@ def bon_niveau(niveau):
 niveau = []
 res = 0
 
-for i, ligne in enumerate(lire_lignes("./advent of code 2024/data/data2.txt")):
+for i, ligne in enumerate(lire_lignes("data/data2.txt")):
     niveau = []
 
     for d in ligne.split():
@@ -27,11 +25,10 @@ for i, ligne in enumerate(lire_lignes("./advent of code 2024/data/data2.txt")):
         res += 1
     else :
         for j, niv in enumerate(niveau):
-            temp = niveau[j]
             niveau.pop(j)
             if bon_niveau(niveau):
                 res += 1
                 break
-            niveau.insert(j,temp)
+            niveau.insert(j,niv)
 
 print(res)
